@@ -1,0 +1,44 @@
+/* 
+ * Program Title: Calculate Area and Perimeter
+ * Author: Ben Stearns
+ * Date: September 7, 2023
+ * Description: Calculates an object's area and perimeter 
+                based on it's length and width
+ * Usage / Known Issues: none
+*/
+namespace AreaAndPerimeter4_1BDS
+{
+    public partial class frmAreaAndPerimeter : Form
+    {
+        public frmAreaAndPerimeter()
+        {
+            InitializeComponent();
+        }
+
+        //Creating Calculate button click event
+        private void btnCalculate_Click(object sender, EventArgs e)
+        {
+            //Creating length and width variables
+            decimal length = Convert.ToDecimal(txtLength.Text);
+            decimal width = Convert.ToDecimal(txtWidth.Text);
+
+            //Creating area and perimeter variables with calculations
+            decimal area = length * width;
+            decimal perimeter = (2 * length) + (2 * width);
+
+            //Output area and perimeter to textboxes
+            txtArea.Text = area.ToString("n");
+            txtPerimeter.Text = perimeter.ToString("n");
+
+            //Shift focus back to length textbox after calculation
+            txtLength.Focus();
+        }
+
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            //Create click event for exit button to close form
+            this.Close();
+        }
+    }
+}
